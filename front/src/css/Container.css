@@ -1,0 +1,33 @@
+.dashContainer {
+  width: calc(100% - 100px);
+  height: calc(100% - 60px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+@media screen and (max-width: 525px) {
+  .dashContainer {
+    width: calc(100% - 68px);
+  }
+  .topContainer .inputBox {
+    width: 120px;
+    z-index: 101;
+  }
+}
+
+* {
+  -ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+@font-face {
+  font-family: "Michroma";
+  src: url("../fonts/Michroma-Regular.ttf") format("truetype");
+}
+* {
+  font-family: "Michroma", sans-serif;
+  text-align: center;
+}

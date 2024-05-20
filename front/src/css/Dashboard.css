@@ -1,0 +1,19 @@
+.dashboard {
+  width: 100%;
+  height: calc(100vh - 60px);
+  background: wheat !important;
+  display: grid;
+  grid-template-columns: 11rem auto 20rem;
+  overflow: hidden;
+}
+
+.dashboard::-webkit-scrollbar {
+  display: none;
+}
+
+@media only screen and (max-width: 525px) {
+  .dashboard {
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+}
