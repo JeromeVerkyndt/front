@@ -5,13 +5,13 @@ import axios from 'axios';
 const ListeMissions = () => {
     const [missionsActive, setMissionsActive] = useState([]);
     const [selectedMission, setSelectedMission] = useState(null);
-    const [selectedFile, setSelectedFile] = useState(null);
+    const [setSelectedFile] = useState(null);
 
 
     useEffect(() => {
         axios.get('http://localhost:3001/missions_active')
             .then(response => {
-                const sortedMissions = response.data.sort((a, b) => a.id_status - b.id_status);
+                response.data.sort((a, b) => a.id_status - b.id_status);
                 setMissionsActive(response.data);
             })
             .catch(error => {
@@ -109,7 +109,7 @@ const ListeMissions = () => {
                                     <input type="file" onClick={(e) => { e.stopPropagation();}} onChange={handleFileChange} />
                                 )}
                                 {missionActive.id_status === 2 && (
-                                    <img src={missionActive.photo_url} alt="image mission" className="cloudinary-image" />
+                                    <img src={missionActive.photo_url} alt="preuve de mission" className="cloudinary-image" />
                                 )}
                                 {missionActive.id_status === 1 && (
                                     <button className="valider" onClick={(e) => { e.stopPropagation(); validateMissionStatus(missionActive.id_mission_active); }}>Valider</button>
